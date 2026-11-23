@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buku Tamu Omah - First Project Flask</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Buku Tamu Omah Rajwa</h1>
+        <p>Silakan isi data di bawah ini menggunakan method POST:</p>
+
+        <form method="POST" action="/">
+            <div class="form-group">
+                <label for="nama_tamu">Nama Tamu:</label>
+                <input type="text" id="nama_tamu" name="nama_tamu" placeholder="Masukkan namamu..." required>
+            </div>
+
+            <div class="form-group">
+                <label for="pesan_tamu">Pesan / Keperluan:</label>
+                <input type="text" id="pesan_tamu" name="pesan_tamu" placeholder="Tulis pesan untuk tuan rumah..." required>
+            </div>
+
+            <button type="submit">Kirim Pesan</button>
+        </form>
+
+        {% if hasil %}
+        <div class="result-box">
+            <p>{{ hasil }}</p>
+        </div>
+        {% endif %}
+
+        <hr>
+        <nav class="links">
+            <a href="/omah">Omah</a> |
+            <a href="/teras">Teras</a> |
+            <a href="/ruang-tamu">Ruang Tamu</a> |
+            <a href="/tuan-rumah">Tuan Rumah</a> |
+            <a href="/nomoromah">Nomor Omah</a> |
+            <a href="/gambar-omah">Gambar Omah</a>
+        </nav>
+    </div>
+</body>
+</html>
